@@ -15,4 +15,14 @@ namespace CourierNumberOne
             Console.WriteLine("========================================================");
         }
     }
+
+    public class CourierNumberOneApiWrapper : IShipmentCourier
+    {
+        private readonly CourierNumberOneApi _courierApi;
+
+        public CourierNumberOneApiWrapper() => _courierApi = new CourierNumberOneApi();
+
+        public void CreateShipment() => _courierApi.CreateShipmentAndGetWayBill();
+        public void TrackShipment() => _courierApi.GetShipmentTrackingDetails();
+    }
 }
