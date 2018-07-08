@@ -23,4 +23,20 @@ namespace CourierNumberTwo
             Console.WriteLine("========================================================");
         }
     }
+
+    public class CourierNumberTwoApiWrapper : IShipmentCourier
+    {
+        private readonly CourierNumberTwoApi _courierApi;
+
+        public CourierNumberTwoApiWrapper() => _courierApi = new CourierNumberTwoApi();
+
+        public void CreateShipment()
+        {
+            _courierApi.CreateShipmentInfo();
+            _courierApi.CreateShipmentInstructions();
+            _courierApi.GetShimpmentWayBill();
+        }
+
+        public void TrackShipment() => _courierApi.GetShipmentTrackingDetails();
+    }
 }
