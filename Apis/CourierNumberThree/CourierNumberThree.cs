@@ -19,4 +19,19 @@ namespace CourierNumberThree
             Console.WriteLine("========================================================");
         }
     }
+
+    public class CourierNumberThreeApiWrapper : IShipmentCourier
+    {
+        private readonly CourierNumberThreeApi _courierApi;
+
+        public CourierNumberThreeApiWrapper() => _courierApi = new CourierNumberThreeApi();
+
+        public void CreateShipment() => _courierApi.CreateShipmentAndGetWayBill();
+
+        public void TrackShipment()
+        {
+            _courierApi.RegisterNumberToGetWayBill();
+            _courierApi.GetTrackingDetails();
+        }
+    }
 }
