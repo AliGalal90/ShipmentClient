@@ -5,4 +5,12 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Apis\CourierNumberFour\CourierNumberFour.csproj" />
+    <ProjectReference Include="..\Apis\CourierNumberOne\CourierNumberOne.csproj" />
+    <ProjectReference Include="..\Apis\CourierNumberThree\CourierNumberThree.csproj" />
+    <ProjectReference Include="..\Apis\CourierNumberTwo\CourierNumberTwo.csproj" />
+    <ProjectReference Include="..\ShipmentCourierInterface\ShipmentCourierInterface.csproj" />
+  </ItemGroup>
+
 </Project>
