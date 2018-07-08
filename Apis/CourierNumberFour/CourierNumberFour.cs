@@ -27,4 +27,24 @@ namespace CourierNumberFour
             Console.WriteLine("========================================================");
         }
     }
+
+    public class CourierNumberFourApiWrapper : IShipmentCourier
+    {
+        private readonly CourierNumberFourApi _courierApi;
+
+        public CourierNumberFourApiWrapper() => _courierApi = new CourierNumberFourApi();
+
+        public void CreateShipment()
+        {
+            _courierApi.CreateShipmentInfo();
+            _courierApi.CreateShipmentInstructions();
+            _courierApi.GetShimpmentWayBill();
+        }
+
+        public void TrackShipment()
+        {
+            _courierApi.RegisterNumberToGetWayBill();
+            _courierApi.GetTrackingDetails();
+        }
+    }
 }
